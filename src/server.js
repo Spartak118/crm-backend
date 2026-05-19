@@ -91,7 +91,7 @@ app.post('/api/customers', async (req, res) => {
 app.get('/api/customers', async (req, res) => {
     try {
         const result = await query('SELECT * FROM customers ORDER BY created_at DESC');
-        res.json(result.rows);
+        res.json(result);
     } catch (error) {
         console.error('Error fetching customers:', error);
         res.status(500).json({ error: 'Failed to fetch customers' });
